@@ -1,0 +1,31 @@
+.carousel {
+  /* keep contents within carousel borders */
+  overflow: hidden;
+  width: 100%;
+}
+
+.inner {
+  /* prevent list items in carousel from going to new line */
+  white-space: nowrap;
+  /* determine what item is in view, right is increase by -100% and left +100% */
+  transform: translateX(-0%);
+  /* tells how the carousel animates */
+  transition: transform 0.3s;
+}
+
+.carousel-item {
+  /* also prevents from going to a new line */
+  display: inline-flex;
+  /* centers the carousel in page and keeps one item in view */
+  align-items: center;
+  /*  */
+  justify-content: center;
+  /* tells how tall the information and image spans */
+  height: 200px;
+  /* keeps only individual item in view and not overlap */
+  width: 100%;
+  /* evident for text next to image */
+  background-color: lavender;
+  /* color of font of text */
+  color: gray;
+}

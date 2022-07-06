@@ -49,22 +49,7 @@ function App() {
   return (
     <div className="App">
       <h1>Crunchyroll EXPO 2022</h1>
-      <ul>
-        {
-          allFilms?.map((film) => {
-            return (
-              <li
-                key={film.id}
-                className="film-info"
-              >
-                <h1>{film.title}</h1>
-                <img src={film.image} alt={film.title} />
-              </li>
-            )
-          })
-        }
-      </ul>
-      <Carousel/>
+      <Carousel allFilms={allFilms}/>
     </div>
   );
 }
