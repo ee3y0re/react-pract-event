@@ -8,9 +8,14 @@
   /* prevent list items in carousel from going to new line */
   white-space: nowrap;
   /* determine what item is in view, right is increase by -100% and left +100% */
-  transform: translateX(-0%);
+  /* transform: translateX(-0%); */
   /* tells how the carousel animates */
   transition: transform 0.3s;
+}
+
+.carousel-control {
+  display: flex;
+  justify-content: space-between;
 }
 
 .carousel-item {

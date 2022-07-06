@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import CarouselItem from "./CarouselItem";
 import "./Carousel.css";
 
 const Carousel = ({ allFilms }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const updateIdx = (newIdx) => {
+    if (newIdx < 0) {
+      // prevents carousel from going for values far beyond left bounds
+      newIdx = 0;
+      // relying on length of data prevents carousel from going far beyond right bounds
+    } else if (newIdx >= allFilms.length) {
+      newIdx = allFilms.length - 1;
+    }
+
+    setActiveIdx(newIdx);
+  }
+
   return (
     <div className="carousel">
-      <div className="inner">
-      {/* <div className="inner" style={{ transform: "translateX(-0%)" }}>*/}
+      {/* <div className="inner"> */}
+      <div className="carousel-control">
+        <button
+          onClick={() => updateIdx(activeIdx - 1)}
+        >Left</button>
+        <button
+          onClick={() => updateIdx(activeIdx + 1)}
+        >Right</button>
+      </div>
+      <div 
+        className="inner" 
+        // not best practice
+        //"translateX(-200%)"
+        style={{ transform: `translateX(-${activeIdx * 100}%)` }}
+      >
         {
           allFilms?.map((film) => {
             return (
