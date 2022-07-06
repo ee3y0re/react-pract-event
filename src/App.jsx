@@ -31,7 +31,7 @@ FAQs link
 Footer
 
 */
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "./Carousel/Carousel";
 
 const filmApi = "https://ghibliapi.herokuapp.com/films"
