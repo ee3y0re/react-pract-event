@@ -34,10 +34,12 @@ Footer
 import React from "react";
 import Carousel from "./Carousel/Carousel";
 
+const filmApi = "https://ghibliapi.herokuapp.com/films"
+
 function App() {
   return (
     <div className="App">
-      <aside>We are now in business</aside>
+      <h1>Crunchyroll EXPO 2022</h1>
       <Carousel/>
     </div>
   );
