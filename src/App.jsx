@@ -31,15 +31,39 @@ FAQs link
 Footer
 
 */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Carousel from "./Carousel/Carousel";
 
 const filmApi = "https://ghibliapi.herokuapp.com/films"
 
 function App() {
+  const [ allFilms, setAllFilms ] = useState([])
+
+  useEffect(() => {
+    axios.get(filmApi)
+      .then((films) => setAllFilms(films.data));
+  }, [])
+
+
   return (
     <div className="App">
       <h1>Crunchyroll EXPO 2022</h1>
+      <ul>
+        {
+          allFilms?.map((film) => {
+            return (
+              <li
+                key={film.id}
+                className="film-info"
+              >
+                <h1>{film.title}</h1>
+                <img src={film.image} alt={film.title} />
+              </li>
+            )
+          })
+        }
+      </ul>
       <Carousel/>
     </div>
   );

@@ -4,7 +4,7 @@ const Carousel = () => {
   return (
     <div className="Carousel">
       <div className="inner">
-        
+        still connected yo
       </div>
     </div>
   )
