@@ -7,10 +7,10 @@
 .inner {
   /* prevent list items in carousel from going to new line */
   white-space: nowrap;
-  /* determine what item is in view, right is increase by -100% and left +100% */
+  /* animation of whats in view, right is increase by -100% and left +100% */
   /* transform: translateX(-0%); */
-  /* tells how the carousel animates */
-  transition: transform 0.3s;
+  /* speed of animation*/
+  transition: transform 1s;
 }
 
 .carousel-control {
@@ -24,13 +24,17 @@
   /* centers the carousel in page and keeps one item in view */
   align-items: center;
   /*  */
-  justify-content: center;
+  justify-content: space-around;
   /* tells how tall the information and image spans */
-  height: 200px;
+  height: auto;
   /* keeps only individual item in view and not overlap */
   width: 100%;
   /* evident for text next to image */
   background-color: lavender;
   /* color of font of text */
   color: gray;
+}
+
+.carousel-img {
+  height: 100%;
 }
